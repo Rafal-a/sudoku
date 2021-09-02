@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--attributes for costume view -->
+    <declare-styleable name="SudokuBoard">
+        <attr name="boardColor" format="color"/>
+    </declare-styleable>
+</resources>
