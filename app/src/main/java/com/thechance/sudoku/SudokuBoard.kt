@@ -38,7 +38,7 @@ class SudokuBoard (context: Context, attributeSet: AttributeSet?) : View(context
         strokeWidth= 2F
         color = Color.parseColor("#e2ebf3")
     }
-
+    lateinit var  solver :Solver
 
     //get the height and width of the device
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -111,7 +111,7 @@ class SudokuBoard (context: Context, attributeSet: AttributeSet?) : View(context
           }
 
       }
-
+    //get the touch event from the user
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         return when(event!!.action){
             MotionEvent.ACTION_DOWN-> {handleTouchEvent(event.x , event.y , )
@@ -119,11 +119,10 @@ class SudokuBoard (context: Context, attributeSet: AttributeSet?) : View(context
             else -> false
         }
     }
-
     private fun handleTouchEvent(x: Float, y: Float) {
         selectedRow = (y/cellSizePixel).toInt()
         selectedColumn = (x/cellSizePixel).toInt()
-        // will redraw the lines
+        // will redraw(refresh) the board
         invalidate()
 
     }
